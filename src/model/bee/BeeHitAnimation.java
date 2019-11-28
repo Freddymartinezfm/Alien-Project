@@ -3,7 +3,7 @@ package model.bee;
 import controller.GameManager;
 
 public class BeeHitAnimation implements BeeAnimStrategy {
-    Bee context;
+    private Bee context;
 
     public BeeHitAnimation(Bee context) {
         this.context = context;

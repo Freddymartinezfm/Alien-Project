@@ -10,7 +10,7 @@ import java.awt.geom.Point2D;
 public class Bee extends GameFigure {
     public static final int FLYING_IN_STATE = 0;
     private static final int FLYING_IN_COMPLETE = 1;
-    private static final int STATE_HIT = 2;
+    protected static final int STATE_HIT = 2;
     private static final int IN_FORMATION = 3;
     public static final int MAIN_PLAY = 4;
     public int state;
@@ -24,7 +24,7 @@ public class Bee extends GameFigure {
 
 
     public Bee(int x, int y, int i, int p){
-        super(x, y, GameManager.sheet.getTexture("Enemy1d"));
+        super(x, y, GameManager.sheet.getTexture("Bee"));
         currentPath = p;
         currentWaypoint = 0;
         index = i;
@@ -117,9 +117,9 @@ public class Bee extends GameFigure {
 //        returnValue.y = (float) (formation.gridLocation.y * ((i % 4) / 2.0));
 //        System.out.println(target);
 //
-//        if (hitCount > 0 ){
-//            setState(STATE_HIT);
-//        }
+        if (hitCount > 0 ){
+            setState(STATE_HIT);
+        }
         double dist = target.distance(location);
         if (target.distance(location) < 10){
 

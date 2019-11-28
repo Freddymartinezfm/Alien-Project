@@ -27,6 +27,9 @@ public class BeeInFormation implements BeeAnimStrategy {
             context.setState(context.MAIN_PLAY);
             context.location.x ++;
          }
+        if (context.hitCount > 0 ){
+            context.setState(Bee.STATE_HIT);
+        }
         context.location.x += 2.0  * Math.cos(rad);
         context.location.y += 2.0  * Math.sin(rad);
 

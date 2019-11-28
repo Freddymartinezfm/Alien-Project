@@ -5,6 +5,7 @@ import model.bee.Bee;
 import model.butterfly.Butterfly;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 import static controller.GameManager.*;
 
@@ -18,6 +19,8 @@ public class Level extends GameFigure implements Subject {
     int numberOfButterflies;
     public int totalEnemies;
     int kills;
+
+    ArrayList<Observer> listeners;
 
 
     public Level(int x, int y, int e){
@@ -40,7 +43,7 @@ public class Level extends GameFigure implements Subject {
         }
 
         for (int i = 0; i < startingEnemies; i++) {
-            gameData.enemyObject.add(new Butterfly(i * 40, i * 50, i, 0 ));
+            gameData.enemyObject.add(new Butterfly(i * 50, i, i, 0 ));
             numberOfButterflies++;
             totalEnemies++;
         }
@@ -76,16 +79,23 @@ public class Level extends GameFigure implements Subject {
 
     @Override
     public void attachListener(Observer o) {
+        listeners.add(o);
 
     }
 
     @Override
     public void detachListener(Observer o) {
+        listeners.remove(o);
+
+
 
     }
 
     @Override
-    public void detachListener() {
+    public void notifyEvent() {
+        for (var o : listeners) {
+            o.eventRecieved();
+        }
 
     }
 }

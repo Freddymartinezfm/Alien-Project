@@ -53,7 +53,6 @@ public class GameManager {
         loader = new ResourceLoader();
         sheet = new SpriteSheet("model/resources/sprites/sprite.png");
         loader.registerFont("model/resources/font/Emulogic-zrEw.ttf");
-
         //startScreen();
         initGame();
         gameLoop();
@@ -87,19 +86,19 @@ public class GameManager {
         gameData.clear();
         EnemyPath.createPaths();
 
-
-        sheet.crop("Spaceshipa",160,55, 16,17);
+        sheet.crop("WhiteSpaceship",160,55, 16,17);
         sheet.crop("Spaceshipb",160,79, 16,17);
-        sheet.crop("Enemy1a",160, 103, 16, 16);
+        sheet.crop("Butterfly",160, 103, 16, 16);
         sheet.crop("Enemy1b",160, 127, 16, 16);
         sheet.crop("Enemy1c",160, 151, 16, 16);
-        sheet.crop("Enemy1d",160, 175, 16, 16);
+        sheet.crop("Bee",160, 175, 16, 16);
         sheet.crop("Bullet",374, 51, 16, 16);
 
 
         gameData.fixedObject.add(new Background(loader.loadImageFile("model/resources/352797_2_En_4_Fig2_HTML.jpg")));
         gameData.fixedObject.add(new InGameStats("Emulogic"));
-        gameData.fixedObject.add(new BaseShip((float)GameManager.win.getWidth()/2, GameManager.win.canvas.getHeight() - 20,sheet.getTexture("Spaceshipa")));
+        gameData.fixedObject.add(new BaseShip((float)GameManager.win.getWidth()/2, GameManager.win.canvas.getHeight() - 20,
+                sheet.getTexture("WhiteSpaceship")));
         gameData.fixedObject.add(new Target(0,0));
 
         //////////////////////////////

@@ -23,7 +23,7 @@ public class Butterfly extends GameFigure {
 
 
     public Butterfly(int x, int y, int i, int p){
-        super(x, y, GameManager.sheet.getTexture("Enemy1a"));
+        super(x, y, GameManager.sheet.getTexture("Butterfly"));
         currentPath = p;
         currentWaypoint = 0;
         index = i;
@@ -38,8 +38,6 @@ public class Butterfly extends GameFigure {
     public void update() {
         updateStates();
     }
-
-
 
 
     private void updateStates() {
