@@ -24,7 +24,6 @@ public class GameManager {
     public static long sleepTime;
     private static InputManager inputManager;
     public static ResourceLoader loader;
-//    public static SpriteSheet sheet;
     public static  SpriteSheet sheet;
     public static GameManager instance;
     public static InGameStats inGameStats;
