@@ -8,7 +8,7 @@ import java.awt.*;
 
 import static controller.GameManager.*;
 
-public class Level extends GameFigure {
+public class Level extends GameFigure implements Subject {
     public int score;
     int startingEnemies = 4 ;
     public  static int defaultScoreUnit = 20;
@@ -40,7 +40,7 @@ public class Level extends GameFigure {
         }
 
         for (int i = 0; i < startingEnemies; i++) {
-            gameData.enemyObject.add(new Butterfly(i, i * 50, i, 0 ));
+            gameData.enemyObject.add(new Butterfly(i * 40, i * 50, i, 0 ));
             numberOfButterflies++;
             totalEnemies++;
         }
@@ -62,14 +62,6 @@ public class Level extends GameFigure {
             level.startLevel();
 //            level.showStats();
         }
-
-
-
-
-
-
-
-
     }
 
     @Override
@@ -82,4 +74,18 @@ public class Level extends GameFigure {
         return 0;
     }
 
+    @Override
+    public void attachListener(Observer o) {
+
+    }
+
+    @Override
+    public void detachListener(Observer o) {
+
+    }
+
+    @Override
+    public void detachListener() {
+
+    }
 }

@@ -15,7 +15,6 @@ import view.MainWindow;
 import javax.swing.*;
 
 public class GameManager {
-    // git test
     public static boolean running;
     public static MainWindow win;
     public static GameData gameData;
