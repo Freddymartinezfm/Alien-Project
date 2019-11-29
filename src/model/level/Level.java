@@ -61,10 +61,7 @@ public class Level extends GameFigure implements Subject {
     public void update() {
         // observer update menu
         var bee = gameData.fixedObject.get(SPACESHIP_INDEX);
-        if (levelComplete) {
-            level.startLevel();
-//            level.showStats();
-        }
+
     }
 
     @Override
